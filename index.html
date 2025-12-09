@@ -67,32 +67,33 @@
   </main>
 
   <!-- Modal Receta -->
-  <div id="recipeModal" class="modal">
-    <div class="modal-content modal-recipe">
-      <button class="close-btn" onclick="closeRecipe()">✕</button>
-      <div class="modal-recipe-media">
-        <div id="modalVideoContainer" class="video-wrapper"></div>
-        <img id="modalImg" class="modal-img" alt="Foto del plato" />
+  <div id="recipeModal" class="modal-overlay">
+    <div class="modal-recipe">
+  
+      <div class="video-wrapper">
+        <iframe id="recipeVideo" allowfullscreen></iframe>
       </div>
-      <div class="modal-recipe-body">
-        <h2 id="modalName"></h2>
-        <p class="meta">
-          <span id="modalTime"></span> • <span id="modalPortions"></span> •
-          <span id="modalDifficulty"></span>
-        </p>
-
+  
+      <div class="modal-body">
+        <h2 class="modal-title" id="modalName"></h2>
+  
+        <div class="recipe-meta">
+          <span id="modalTime"></span> • <span id="modalPortions"></span>
+        </div>
+  
         <h3>Ingredientes</h3>
-        <ul id="modalIngredients" class="ingredients-list"></ul>
-
+        <ul id="modalIngredients" class="ingredients-grid"></ul>
+  
         <h3>Preparación</h3>
-        <ol id="modalSteps" class="steps-list"></ol>
-
-        <h3>Agregar a un día</h3>
-        <div id="assignBtns" class="assign-grid"></div>
+        <ol id="modalSteps"></ol>
+  
+        <button id="assignBtns"></button>
+        <button onclick="closeRecipe()" class="btn-close">Cerrar</button>
       </div>
+  
     </div>
   </div>
-
+  
   <!-- Modal Planner completo -->
   <div id="plannerModal" class="modal">
     <div class="modal-content modal-planner">
