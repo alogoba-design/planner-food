@@ -1,42 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DISPENSIA</title>
+<title>Dispensia — Planificador de Recetas</title>
 <link rel="stylesheet" href="dispensia.css">
-<script defer src="dispensia.js"></script>
 </head>
 
 <body>
 
+<!-- ======================================================= -->
+<!-- HEADER TIPO HELLOFRESH ← Siempre visible                -->
+<!-- ======================================================= -->
 <header>
-    DISPENSIA · Recetario
+    <div id="logo">🥗 DISPENSIA</div>
+    <nav>
+        <span class="nav-item">Recetas</span>
+        <span class="nav-item">Favoritos</span>
+        <span class="nav-item">Mi Lista</span>
+    </nav>
 </header>
 
-<!-- galería scroll -->
-<section id="gallery"></section>
+<!-- ======================================================= -->
+<!-- CONTENEDOR PRINCIPAL CON SCROLL                         -->
+<!-- ======================================================= -->
+<section id="layout">
 
-<!-- modal -->
-<div id="recipeModal" class="modal-overlay">
-  <div class="modal-content">
-
-      <div class="video-wrapper">
-        <iframe id="recipeVideo" allowfullscreen></iframe>
-      </div>
-
-      <h2 id="modalName"></h2>
-      <p class="meta"><span id="modalTime"></span> • <span id="modalPortions"></span></p>
-
-      <h3>Ingredientes</h3>
-      <ul id="modalIngredients"></ul>
-
-      <h3>Preparación</h3>
-      <ol id="modalSteps"></ol>
-
-      <button onclick="closeRecipe()" class="close-btn">Cerrar</button>
-  </div>
-</div>
-
-</body>
-</html>
+    <div id="title-zone">
+        <h1>Elige tus recetas de la semana</h1>
+        <p class="sub">Selecciona tus platos sin perder el encabezado — estilo HelloFresh</p>
+    </di
