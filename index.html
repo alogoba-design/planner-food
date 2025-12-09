@@ -10,9 +10,7 @@
 
 <body>
 
-<!-- ======================================================= -->
-<!-- HEADER TIPO HELLOFRESH ← Siempre visible                -->
-<!-- ======================================================= -->
+<!-- ================= HEADER ================= -->
 <header>
     <div id="logo">🥗 DISPENSIA</div>
     <nav>
@@ -22,12 +20,47 @@
     </nav>
 </header>
 
-<!-- ======================================================= -->
-<!-- CONTENEDOR PRINCIPAL CON SCROLL                         -->
-<!-- ======================================================= -->
-<section id="layout">
+<!-- ================= LAYOUT ================= -->
+<div id="layout">
 
     <div id="title-zone">
         <h1>Elige tus recetas de la semana</h1>
         <p class="sub">Selecciona tus platos sin perder el encabezado — estilo HelloFresh</p>
-    </di
+    </div>
+
+    <!-- 🔥 AQUÍ DEBEN CARGAR LAS RECETAS -->
+    <div id="recipe-scroll">
+        <div id="gallery" class="grid"></div>
+    </div>
+
+</div>
+
+<!-- ============== MODAL ============== -->
+<div id="modal" class="hidden">
+
+    <div id="modal-box">
+
+        <button id="close" onclick="closeRecipe()">✕</button>
+
+        <div id="media-block">
+            <iframe id="videoFrame" allowfullscreen></iframe>
+            <img id="modalImg">
+        </div>
+
+        <div id="modalText">
+            <h2 id="mName"></h2>
+            <p id="mInfo"></p>
+
+            <h3>Ingredientes</h3>
+            <ul id="mIng"></ul>
+
+            <h3>Preparación</h3>
+            <ol id="mSteps"></ol>
+        </div>
+
+    </div>
+</div>
+
+<script src="dispensia.js"></script>
+</body>
+</html>
