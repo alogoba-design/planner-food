@@ -368,26 +368,37 @@ body {
   gap: 16px;
 }
 
+/* ------------ VIDEO MODAL FIX RESPONSIVE ------------ */
 .modal-recipe-media {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 14px;
+  width: 100%;
+  align-items: flex-start;
 }
 
 .video-wrapper {
-  width: 100%;
-  aspect-ratio: 16 / 9;
+  width: 60%;
+  position: relative;
+  aspect-ratio: 16/9; /* 🔥 Mantiene proporción exacta */
   background: #000;
-  border-radius: var(--radius-md);
+  border-radius: 12px;
   overflow: hidden;
 }
 
-.modal-img {
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  border-radius: var(--radius-md);
-  object-fit: cover;
-  aspect-ratio: 4 / 3;
+  height: 100%;
 }
+
+/* Imagen del plato al lado */
+.modal-img {
+  width: 40%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
 
 .modal-recipe-body h2 {
   margin-bottom: 4px;
