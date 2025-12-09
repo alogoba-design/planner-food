@@ -10,37 +10,14 @@
 
 <body>
 
-<header> DISPENSIA — Planificador de Recetas </header>
+<header>DISPENSIA — Planner semanal</header>
 
-<!-- =============== CATÁLOGO =============== -->
-<div id="catalog"></div>
+<div id="gallery"></div>
+<div id="weekBoard"></div>
 
-<!-- =============== MODAL RECETA =============== -->
-<div id="recipeModal" class="modal-overlay">
-  <div class="modal-recipe">
-
-    <div class="video-wrapper">
-      <iframe id="recipeVideo" allowfullscreen autoplay></iframe>
-    </div>
-
-    <div class="modal-body">
-      <h2 class="modal-title" id="modalName"></h2>
-
-      <div class="recipe-meta">
-        ⏱ <span id="modalTime"></span> • 🍽 <span id="modalPortions"></span>
-      </div>
-
-      <h3>Ingredientes</h3>
-      <ul id="modalIngredients" class="ingredients-grid"></ul>
-
-      <h3>Preparación</h3>
-      <ol id="modalSteps"></ol>
-
-      <button onclick="closeRecipe()" class="btn-close">Cerrar</button>
-    </div>
-
-  </div>
-</div>
-
-</body>
-</html>
+<!-- RECETA -->
+<div id="recipeModal" style="display:none;" class="modal">
+  <img id="modalImg">
+  <h2 id="modalName"></h2>
+  <p id="modalTime"></p>
+  <p id="mod

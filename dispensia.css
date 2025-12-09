@@ -1,198 +1,78 @@
-/* ===============================
-   RESET GENERAL
-================================*/
-*{
+body{
+  font-family:sans-serif;
+  background:#fff;
   margin:0;
   padding:0;
-  box-sizing:border-box;
-  font-family:system-ui, sans-serif;
 }
 
-body,html{
-  height:100%;
-  overflow:hidden;
-  background:#fff;
-}
-
-/* ===============================
-   HEADER FIJO
-================================*/
 header{
-  width:100%;
   background:#0f3f1b;
   color:#fff;
-  padding:18px 32px;
+  padding:20px;
   font-size:22px;
-  font-weight:700;
-  text-transform:uppercase;
-  position:sticky;
-  top:0;
-  z-index:10;
+  text-align:center;
 }
 
-/* ===============================
-   CONTENEDOR DE CATÁLOGO SCROLLABLE
-================================*/
-#catalog{
-  max-width:1100px;
-  margin:auto;
-  margin-top:20px;
-  height:calc(100vh - 140px);  /* 🔥 antes 190px */
-  overflow-y:auto;
-  padding-bottom:70px;         /* 🔥 permite ver los últimos platos */
+/* Galería */
+#gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:16px;
+  padding:20px;
 }
 
-/* Scroll bar */
-#catalog::-webkit-scrollbar{width:6px;}
-#catalog::-webkit-scrollbar-thumb{
-  background:#0f3f1b;
-  border-radius:10px;
-}
-
-/* ===============================
-   CARDS
-================================*/
 .card{
   background:#fff;
-  border-radius:12px;
-  overflow:hidden;
+  border-radius:10px;
   box-shadow:0 4px 12px rgba(0,0,0,.1);
-  margin:14px 0;
   cursor:pointer;
+  overflow:hidden;
   transition:.25s;
 }
 
-.card:hover{
-  transform:scale(1.03);
-  box-shadow:0 6px 18px rgba(0,0,0,.18);
-}
+.card:hover{ transform:scale(1.03); }
 
 .card img{
   width:100%;
-  height:220px;
+  height:200px;
   object-fit:cover;
 }
 
-.card-body{
-  padding:14px 18px;
-}
-
-.card-body h3{
-  font-size:20px;
-  font-weight:700;
-  margin-bottom:4px;
-}
-
-.card-body p{
-  font-size:14px;
-  opacity:.65;
-}
+.card-body{ padding:14px; }
+.card-body h3{ margin:0 0 5px; font-size:18px; }
+.card-body p{ opacity:.6; margin-bottom:10px; }
 
 .card-body button{
-  margin-top:10px;
   background:#0f3f1b;
   color:#fff;
-  padding:9px 16px;
+  width:100%;
+  padding:8px;
   border:none;
   border-radius:6px;
-  cursor:pointer;
-  width:100%;
-  font-size:15px;
   font-weight:600;
 }
 
-/* ===============================
-   MODAL RECIPE + VIDEO OK
-================================*/
-.modal-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.55);
-  display:none;
-  place-items:center;
+/* Modal */
+.modal{
+  position:fixed; top:0; left:0;
+  width:100vw; height:100vh;
+  background:rgba(0,0,0,.65);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
   z-index:9999;
 }
 
-.modal-overlay.active{
-  display:grid;
+.modal > div{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  max-width:650px;
+  width:90%;
 }
 
-.modal-recipe{
-  display:flex;
-  flex-direction:column;
-  width:85%;
-  max-width:900px;
-  max-height:90vh;
-  background:#ffffff;
-  border-radius:16px;
-  overflow-y:auto;
-  padding-bottom:40px;
-}
-
-/* Video 16:9 */
-.video-wrapper{
-  position:relative;
+.modal img{
   width:100%;
-  padding-top:56.25%;
-  background:#000;
-  border-radius:14px;
-  overflow:hidden;
-}
-
-.video-wrapper iframe{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  border:none;
-}
-
-/* Contenido UI */
-.modal-body{
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-  padding:22px;
-}
-
-.modal-title{
-  font-size:28px;
-  font-weight:700;
-  color:#0f3f1b;
-  text-align:center;
-}
-
-.recipe-meta{
-  text-align:center;
-  font-size:16px;
-  opacity:.7;
-}
-
-/* Ingredientes estilo HelloFresh */
-.ingredients-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-top:6px;
-}
-
-.ingredients-grid li{
-  list-style:none;
-  padding:8px 12px;
-  background:#f5f5f5;
-  border-radius:8px;
-  font-size:15px;
-}
-
-/* Boton cerrar */
-.btn-close{
-  background:#d32f2f;
-  padding:10px;
-  color:#fff;
-  border:none;
-  border-radius:8px;
-  font-size:15px;
-  width:100%;
-  margin-top:14px;
+  border-radius:10px;
 }
