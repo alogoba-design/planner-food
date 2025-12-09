@@ -11,32 +11,30 @@
 <body>
 
 <header>
-    DISPENSIA — Planificador de Recetas
+    DISPENSIA · Recetario
 </header>
 
-<!-- LISTA SCROLLEABLE DE PLATOS -->
-<div id="gallery"></div>
+<!-- galería scroll -->
+<section id="gallery"></section>
 
-<!-- ========================= MODAL ========================= -->
+<!-- modal -->
 <div id="recipeModal" class="modal-overlay">
   <div class="modal-content">
 
-    <!-- VIDEO RESPONSIVE -->
-    <div class="video-wrapper">
-      <iframe id="recipeVideo" allowfullscreen></iframe>
-    </div>
+      <div class="video-wrapper">
+        <iframe id="recipeVideo" allowfullscreen></iframe>
+      </div>
 
-    <!-- INFO -->
-    <h2 id="modalName"></h2>
-    <p class="meta"><span id="modalTime"></span> • <span id="modalPortions"></span></p>
+      <h2 id="modalName"></h2>
+      <p class="meta"><span id="modalTime"></span> • <span id="modalPortions"></span></p>
 
-    <h3>Ingredientes</h3>
-    <ul id="modalIngredients"></ul>
+      <h3>Ingredientes</h3>
+      <ul id="modalIngredients"></ul>
 
-    <h3>Preparación</h3>
-    <ol id="modalSteps"></ol>
+      <h3>Preparación</h3>
+      <ol id="modalSteps"></ol>
 
-    <button class="close-btn" onclick="closeRecipe()">Cerrar</button>
+      <button onclick="closeRecipe()" class="close-btn">Cerrar</button>
   </div>
 </div>
 
