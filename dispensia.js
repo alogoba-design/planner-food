@@ -122,8 +122,9 @@ function filterMeals(type, chipEl) {
 
 /* ============================ MODAL RECETA ============================ */
 function openRecipe(codigo) {
-  currentRecipeId = codigo;
-  const r = PLATOS.find((p) => p.codigo === codigo);
+  const r = PLATOS.find(x => x.codigo === codigo);
+  activeRecipe = codigo;            // 🔥 importante
+  highlightAssignedDays();          // 🔥 repinta la selección
   if (!r) return;
 
   const modalImg = document.getElementById("modalImg");
@@ -348,3 +349,30 @@ document.addEventListener("click", (ev) => {
   if (ev.target.id === "plannerModal") closePlanner();
   if (ev.target.id === "shoppingModal") closeShopping();
 });
+
+/* ==============================
+   🔥 SELECCIÓN Y PINTADO DE DÍAS
+=================================*/
+
+let selectedDays = {};   // guarda { dia: codigo_plato }
+let activeRecipe = null; // receta actualmente abierta
+
+function assignToDay(day, codigo){
+  selectedDays[day] = codigo;
+  highlightAssignedDays();
+}
+
+function highlightAssignedDays(){
+  document.querySelectorAll("#assignBtns button").forEach(btn=>{
+    const d = btn.dataset.day;
+    if(selectedDays[d]){
+      btn.style.background = "var(--green-main)";
+      btn.style.color = "white";
+      btn.style.fontWeight = "700";
+    } else {
+      btn.style.background = "#e5e7eb";
+      btn.style.color = "#111827";
+      btn.style.fontWeight = "400";
+    }
+  });
+}

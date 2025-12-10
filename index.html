@@ -83,13 +83,21 @@
 
         <h3>Ingredientes</h3>
         <ul id="modalIngredients" class="ingredients-list"></ul>
-
+        
         <h3>Preparación</h3>
         <ol id="modalSteps" class="steps-list"></ol>
-
-        <h3>Agregar a un día</h3>
-        <div id="assignBtns" class="assign-grid"></div>
-      </div>
+        
+        <!-- 🔥 NUEVO BLOQUE CORRECTO -->
+        <h3 style="margin-top:18px;">Asignar a un día</h3>
+        <div id="assignBtns" class="assign-grid">
+          <button data-day="lunes"    onclick="assignToDay('lunes', activeRecipe)">Lunes</button>
+          <button data-day="martes"   onclick="assignToDay('martes', activeRecipe)">Martes</button>
+          <button data-day="miercoles"onclick="assignToDay('miercoles', activeRecipe)">Miércoles</button>
+          <button data-day="jueves"   onclick="assignToDay('jueves', activeRecipe)">Jueves</button>
+          <button data-day="viernes"  onclick="assignToDay('viernes', activeRecipe)">Viernes</button>
+          <button data-day="sabado"   onclick="assignToDay('sabado', activeRecipe)">Sábado</button>
+          <button data-day="domingo"  onclick="assignToDay('domingo', activeRecipe)">Domingo</button>
+        </div>        
     </div>
   </div>
 
